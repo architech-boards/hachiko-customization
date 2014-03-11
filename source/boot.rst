@@ -5,8 +5,8 @@ In the latest release only the bootmode 3 is supported by Hachiko board. That is
 
 For more information:
 
-* Hachiko schematics `link <http://downloads.architechboards.com/hachiko/doc/RSR977B.pdf>`_
-* RZ/A1H User's Manual `link <http://downloads.architechboards.com/hachiko/doc/r01uh0403ej0060_rz_a1h.pdf>`_
+* `Hachiko schematics <http://downloads.architechboards.com/hachiko/doc/RSR977B.pdf>`_
+* `RZ/A1H User's Manual <http://downloads.architechboards.com/hachiko/doc/r01uh0403ej0060_rz_a1h.pdf>`_
 
 .. _flashing_NOR:
 
@@ -45,7 +45,7 @@ To use ULINK2, DS-5 from ARM Ltd. and binary writing tool provided from Renesas 
 | Software you need:
 
 * SPIBSCBoot.zip file containing the DS-5 workspace, the script file and a launcher configuration 
-  (download: `link <http://downloads.architechboards.com/hachiko/doc/SPIBSCBoot.zip>`_)
+  (`download link <http://downloads.architechboards.com/hachiko/doc/SPIBSCBoot.zip>`_)
 * DS-5 (preferred and tested version: DS500-BN-00003-r5p0-15rel1)
 
 Setup of the environment and first run:
@@ -73,8 +73,8 @@ For all the subsequent times it will be enough:
 
 For a more detailed description of the entire process, see:
 
-* Renesas Application Note: "Example of Downloading to Serial Flash Memory Using the Semihost Function of ARM DS-5" `link <http://downloads.architechboards.com/hachiko/doc/RZ_A1H_sflash_sample_rev0.01e.pdf>`_
-* Renesas Applicaton Note: "Example of Booting from Serial Flash Memory" `link <http://downloads.architechboards.com/hachiko/doc/RZ_A1H_spibscboot_sample_rev0.01e.pdf>`_ 
+* Renesas Application Note: `Example of Downloading to Serial Flash Memory Using the Semihost Function of ARM DS-5" <http://downloads.architechboards.com/hachiko/doc/RZ_A1H_sflash_sample_rev0.01e.pdf>`_
+* Renesas Applicaton Note: `Example of Booting from Serial Flash Memory <http://downloads.architechboards.com/hachiko/doc/RZ_A1H_spibscboot_sample_rev0.01e.pdf>`_ 
 
 .. note::
 
@@ -119,7 +119,7 @@ On the hachiko board you can boot using the USB or the serial NOR. At booting if
 
 For a brief documentation about U-Boot:
 
-* Renesas U-Boot documentation: `link <http://downloads.architechboards.com/hachiko/doc/users_manual_u-boot_E.txt>`_ 
+* `Renesas U-Boot documentation: <http://downloads.architechboards.com/hachiko/doc/users_manual_u-boot_E.txt>`_ 
 
 Boot from USB
 =============
@@ -265,7 +265,7 @@ where again $RAM_ADDR is the temporary RAM location holding our file, $OFFSET is
 
 For more informations about flash managing with U-Boot refer to:
 
-* Renesas U-Boot documentation `link <http://downloads.architechboards.com/hachiko/doc/users_manual_u-boot_E.txt>`_ 
+* `Renesas U-Boot documentation <http://downloads.architechboards.com/hachiko/doc/users_manual_u-boot_E.txt>`_ 
 
 Using Linux
 -----------
