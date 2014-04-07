@@ -19,7 +19,7 @@ build directory (copying them in the aforementioned directory to avoid messing u
 
 or from the vanilla kernel tarball at this URL:
 
- `https://www.kernel.org/pub/linux/kernel/v3.0/patch-3.8.13.bz2 <https://www.kernel.org/pub/linux/kernel/v3.0/patch-3.8.13.bz2>`_.
+ `http://kernel.org/pub/linux/kernel/v3.0/linux-3.8.13.tar.bz2 <http://kernel.org/pub/linux/kernel/v3.0/linux-3.8.13.tar.bz2>`_.
 
 and patch it using the patches found in @board@ BSP meta-layer:
 

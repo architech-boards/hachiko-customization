@@ -1,5 +1,9 @@
 To deploy the root file system, you are going to need an USB flash drive.
 
+.. warning::
+
+ The USB flash drive content will be lost forever!
+
 1. Align a new partition to the first sector of your USB device:
 
 .. host::

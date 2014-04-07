@@ -18,7 +18,7 @@ or
 
 .. board::
 
- flashcp -v /path/to/image.jffs2 /dev/mtdX
+ flashcp -v /path/to/image.jffs2 /dev/mtd4
 
 .. important::
 
