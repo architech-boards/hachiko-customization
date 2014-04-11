@@ -12,13 +12,13 @@ File *.jffs2* can be written out "as is" on the final medium (usually flash NOR 
 
 .. host::
 
- sudo dd if=/path/to/image.jffs2 of=/your/sd/card/device
+ | sudo dd if=/path/to/image.jffs2 of=/path/to/your/USB/device
 
 or 
 
 .. board::
 
- flashcp -v /path/to/image.jffs2 /dev/mtd4
+ | flashcp -v /path/to/image.jffs2 /dev/mtd4
 
 .. important::
 

@@ -11,7 +11,7 @@ Anyway, we will assume in this giude that u-boot sources will be copied to:
 
 .. host::
 
- /home/@user@/Documents/u-boot
+ | /home/@user@/Documents/u-boot
 
 and such directory does not yet exists on your PC.
 Of course, you are free to choose the path you like the most for u-boot sources, just remember
@@ -26,13 +26,13 @@ about is this one:
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/work/@machine-name@-poky-linux-@eabi@/u-boot/2013.04-r0/u-boot-2013.04/
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/work/@machine-name@-poky-linux-@eabi@/u-boot/2013.04-r0/u-boot-2013.04/
 
 Replace:
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/
 
 all over this chapter with your custom build directory path if you are not working with the default SDK 
 build directory.
@@ -54,7 +54,7 @@ working with the SDK:
 
 .. host::
 
- patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-bsp/u-boot/files/\*.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-bsp/u-boot/files/*.patch
 
 However, if you are not working with the official SDK the most general solution to check them out and patch
 the sources is:
@@ -63,7 +63,7 @@ the sources is:
 
  | cd /home/@user@/Documents
  | git clone -b dora https://github.com/architech-boards/@meta-layer@.git 
- | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/Documents/@meta-layer@/recipes-bsp/u-boot/files/\*.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/Documents/@meta-layer@/recipes-bsp/u-boot/files/*.patch
 
 Configuration and board files for @board@ board are in:
 
@@ -105,21 +105,21 @@ When *Bitbake* finishes, you find an installer script under directory:
 
 .. host::
 
- /path/to/yocto/directory/build/tmp/deploy/sdk/
+ | /path/to/yocto/directory/build/tmp/deploy/sdk/
 
 Run the script and you get, under the installation directory, a script to *source* to get your environment
 almost in place for compiling. The name of the script is:
 
 .. host::
 
- environment-setup-cortexa9hf-vfp-neon-poky-linux-@eabi@
+ | environment-setup-cortexa9hf-vfp-neon-poky-linux-@eabi@
 
 Anyway, the environment is not quite right for compiling the bootloader and the Linux kernel, you need to unset
 a few variables first to get it ready:
 
 .. host::
 
- unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
+ | unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
 
 Here you go, you now have the proper working environment to compile *u-boot* (or the Linux kernel).
 

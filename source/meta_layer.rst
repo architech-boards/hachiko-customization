@@ -9,7 +9,7 @@ meta-hachiko is stored in a git repository that can be cloned with:
 
 .. host::
 
- git clone -b dora https://github.com/architech-boards/@meta-layer@.git
+ | git clone -b dora https://github.com/architech-boards/@meta-layer@.git
 
 For information about Yocto, Bitbake and the directories tree inside the
 meta-layer, please refer to the Yocto documentation.
@@ -26,7 +26,7 @@ To manually select board and distribution for *Bitbake*, make sure that file
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/conf/local.conf
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/conf/local.conf
 
 contains the assignment of these variables:
 
@@ -50,12 +50,12 @@ Within the SDK, the files will be emitted to directory:
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/deploy/images/@machine-name@/
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/deploy/images/@machine-name@/
 
 If you are not working with the SDK, just replace:
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/
 
 with your build directory path.

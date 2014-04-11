@@ -116,7 +116,7 @@ sector of the partition below the 63rd sector. It is possible to use tools as
 
 .. host::
 
- cfdisk /path/to/your/USB/device
+ | cfdisk /path/to/your/USB/device
 
 As alternative it is possible to use the sfdisk tools to have the partition
 correctly aligned to the first sector:
@@ -131,7 +131,7 @@ correctly aligned to the first sector:
 
 .. host::
 
- mkfs.ext2 /path/to/your/USB/device/partition
+ | mkfs.ext2 /path/to/your/USB/device/partition
 
 
 USB content
@@ -143,7 +143,7 @@ When using Yocto to generate the rootfs we need to extract the compressed rootfs
 
 .. host::
 
- /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/deploy/images/@machine-name@
+ | /home/@user@/architech_sdk/architech/@board-alias@/yocto/build/tmp/deploy/images/@machine-name@
 
 in the partition on the USB and copy the kernel in */boot/uImage* and *DTB* file in */boot/rza1-hachiko.dtb*.
 
@@ -206,8 +206,8 @@ The process of writing data in serial NOR using U-Boot goes through 3 main steps
 
 .. board::
 
- usb start
- ext2load usb 0 @u-boot-start-addr@ /path/to/your/u-boot.bin
+ | usb start
+ | ext2load usb 0 @u-boot-start-addr@ /path/to/your/u-boot.bin
 
 The output from the command is also the size of the file loaded, info useful for step (3).
 
@@ -223,7 +223,7 @@ Please, note that while *spibsc0_loader*, *spibsc0_kernel*, and *spibsc0_dtb* pa
 
 .. board::
 
- sf erase $OFFSET $SIZE
+ | sf erase $OFFSET $SIZE
 
 where $OFFSET is the partition offset and $SIZE its size in bytes.
 
@@ -231,7 +231,7 @@ where $OFFSET is the partition offset and $SIZE its size in bytes.
 
 .. board::
 
- sf write $RAM_ADDR $OFFSET $SIZE
+ | sf write $RAM_ADDR $OFFSET $SIZE
 
 where $RAM_ADDR is the temporary RAM location holding our file (tipically @u-boot-start-addr@), $OFFSET is the partition offset and $SIZE is the file size in bytes as obtained by the output of the comman ext2load in step (1).
 
@@ -246,7 +246,7 @@ To use linux for writing or updating data on the serial NOR you are going to nee
 
 .. host::
 
- bitbake core-image-minimal-mtdutils
+ | bitbake core-image-minimal-mtdutils
 
 In Linux, the process is made easier by the MTD framework that remap each NOR partition to a different device file. In particular:
 
@@ -264,19 +264,19 @@ Again the process goes through 2 steps: (1) erasing the content of the serial NO
 
 .. board::
 
- flash_erase /path/to/your/mtd/device 0 0
+ | flash_erase /path/to/your/mtd/device 0 0
 
 This command completely erases the content of the partition. For the root file system the command is slightly different, since being *spibsc0_rootfs* a *JFFS2* partition, it requires proper formatting, so for mtd4 device you need to run this command:
 
 .. board::
 
- flash_erase -j /dev/mtd4 0 0
+ | flash_erase -j /dev/mtd4 0 0
 
 2. To write the new data on the serial NOR the tool flashcp is used. Again for raw file the simple syntax is:
 
 .. board::
 
- flashcp -v /path/to/your/file /path/to/your/mtd/device
+ | flashcp -v /path/to/your/file /path/to/your/mtd/device
 
 For rootfs we have two different ways to write data in *spibsc0_rootfs* partition:
 
@@ -284,7 +284,7 @@ For rootfs we have two different ways to write data in *spibsc0_rootfs* partitio
 
 .. board::
 
- flashcp -v /path/to/your/image/file.jffs2 /dev/mtd4
+ | flashcp -v /path/to/your/image/file.jffs2 /dev/mtd4
 
 2. If you wish to use the image file *.tar.bz2* instead, you need to mount the partition and decompress the file content in place.
 

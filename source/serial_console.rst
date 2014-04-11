@@ -44,7 +44,7 @@ the name of the device is by looking to the kernel messages, so:
  | [ 2912.660809] usb 3-4: >Endpoint 1 MaxPacketSize 64
  | [ 2912.660812] usb 3-4: >Endpoint 2 MaxPacketSize 64
  | [ 2912.660815] usb 3-4: >Setting MaxPacketSize 64
- | [ 2912.661102] usb 3-4: >FTDI USB Serial Device converter now attached to **@console-device@**
+ | [ 2912.661102] usb 3-4: >FTDI USB Serial Device converter now attached to @console-device@
 
 As you can see, here the device has been recognized as **@console-device@**.
 
