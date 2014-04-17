@@ -19,7 +19,7 @@ the latter to be used when an external SDRAM is available on the board.
 Whereas *hachiko64* machine can be used for virtually any distro and image
 available on Yocto, *hachiko* machine must use a custom tailored distro and image
 to be able to fit in the limited amount of SRAM available on-chip.
-This documentation is about @machine-name@.
+This documentation is about **@machine-name@** machine.
 
 To manually select board and distribution for *Bitbake*, make sure that file
 *local.conf*, that in the SDK has this path:

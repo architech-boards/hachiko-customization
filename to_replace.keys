@@ -27,3 +27,6 @@
 @quick-lan-connector@;XF1
 @qt-libs-alias@;Hachiko
 @arm-toolchain-directory@;cortexa9hf-vfp-neon-poky-linux-gnueabi
+@quickstart-image-extension@;tar.bz2
+@quickstart-image-tar-options@;-xjf
+@meta-layer-remote@;https://github.com/architech-boards
