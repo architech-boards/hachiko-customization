@@ -1,7 +1,8 @@
 @project@;Hachiko/SDRAM
 @copyright@;Architech
-@version@;1.0.0
-@release@;1.0.0
+@version@;1.5.1
+@release@;A
+@date@;08/08/2014
 @htmlhelp@;hachiko-sdram-sdkdoc
 @vendor@;Architech
 @board@;Hachiko/SDRAM
@@ -30,3 +31,4 @@
 @quickstart-image-extension@;tar.bz2
 @quickstart-image-tar-options@;-xjf
 @meta-layer-remote@;https://github.com/architech-boards
+@add-ons@;

@@ -10,13 +10,15 @@ This is what the box looks like
 
 .. image:: _static/unboxing_close.jpg
 
-
 And this is the content of box
 
 .. image:: _static/unboxing_open.jpg
 
-The board itself has been programmed to boot to a Linux console of a really tiny distribution,
-custom tailored to fit the 10MB of internal ram of Renesas's SoC.
+| The board itself has been programmed to boot to a Linux console of a really tiny distribution,
+| custom tailored to fit the 10MB of internal ram of Renesas's SoC.
+| First of all, make sure the board can boot from the pen drive by setting the jumpers J4 short pin2-3, J5 short pin1-2, J6 short pin1-2, J7 short pin 2-3 and J8 short pin2-3 with this configuration:
+
+.. image:: _static/boot_jumpers.jpg
 
 Shall we power on the board for the first time? Of course!
 

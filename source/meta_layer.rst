@@ -3,7 +3,7 @@ Meta Layer
 
 A Yocto/OpenEmbedded meta-layer is a directory that contains recipes,
 configuration files, patches, and others things all needed by Bitbake to
-properly "see" and build a BSP, a distrubution, and a (set of) package(s).
+properly "see" and build a BSP, a distribution, and a (set of) package(s).
 
 meta-hachiko is stored in a git repository that can be cloned with:
 

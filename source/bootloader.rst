@@ -7,7 +7,7 @@ to recompile it you have two ways to get the sources:
 * use the sources you find in Yocto build directory after having compiled at least once a yocto image, or
 * download the official u-boot release, than patch it with the BSP patches for @board@ board.
 
-Anyway, we will assume in this giude that u-boot sources will be copied to:
+Anyway, we will assume in this guide that u-boot sources will be copied to:
 
 .. host::
 
@@ -16,6 +16,9 @@ Anyway, we will assume in this giude that u-boot sources will be copied to:
 and such directory does not yet exists on your PC.
 Of course, you are free to choose the path you like the most for u-boot sources, just remember
 to replace the path used in this guide with your custom path.
+
+From Yocto sources
+------------------
 
 The first way is based on the sources set up by the Yocto build system. However, it is never
 advisable to work with the sources in the Yocto build directory, if you really want to modify
@@ -37,24 +40,35 @@ Replace:
 all over this chapter with your custom build directory path if you are not working with the default SDK 
 build directory.
 
+From the official u-boot release
+--------------------------------
+
 The second way is to get the official U-Boot sources and patch them with @board@ BSP patches.
 @board@ board uses U-Boot version 2013.04, which can be downloaded from:
 
 `ftp://ftp.denx.de/pub/u-boot/u-boot-2013.04.tar.bz2 <ftp://ftp.denx.de/pub/u-boot/u-boot-2013.04.tar.bz2>`_.
 
-otherwise a git repository is available for cloning:
+with this command:
 
 .. host::
 
  | cd /home/@user@/Documents
- | git clone -b v2013.04 http://git.denx.de/u-boot.git
+ | wget ftp://ftp.denx.de/pub/u-boot/u-boot-2013.04.tar.bz2
+
+then extract the tarball:
+
+.. host::
+
+ | tar -xjf u-boot-2013.04.tar.bz2
+ | mv u-boot-2013.04 u-boot
 
 Patches are to be found in the Yocto meta-layer **@meta-layer@**. You can use them right away if you are
 working with the SDK:
 
 .. host::
 
- | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-bsp/u-boot/files/*.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-bsp/u-boot/files/0001-Add-bps-patch-v2.0.0.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-bsp/u-boot/files/0002-Add-hachiko-support.patch
 
 However, if you are not working with the official SDK the most general solution to check them out and patch
 the sources is:
@@ -63,7 +77,8 @@ the sources is:
 
  | cd /home/@user@/Documents
  | git clone -b dora https://github.com/architech-boards/@meta-layer@.git 
- | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/Documents/@meta-layer@/recipes-bsp/u-boot/files/*.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/Documents/@meta-layer@/recipes-bsp/u-boot/files/0001-Add-bps-patch-v2.0.0.patch
+ | patch -p1 -d /home/@user@/Documents/u-boot < /home/@user@/Documents/@meta-layer@/recipes-bsp/u-boot/files/0002-Add-hachiko-support.patch
 
 Configuration and board files for @board@ board are in:
 

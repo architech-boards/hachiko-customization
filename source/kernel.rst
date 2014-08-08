@@ -1,6 +1,9 @@
 Linux Kernel
 ============
 
+Build from sources
+------------------
+
 As seen for **U-Boot** in the previous section, the first step is to get the kernel
 sources, which in this guide we assume that they will be copied to directory:
 
@@ -25,7 +28,9 @@ and patch it using the patches found in @board@ BSP meta-layer:
 
 .. host::
 
- | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-kernel/linux/files/*.patch
+ | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-kernel/linux/files/0001-Imported-Renesas-patch-v2.0.0.patch
+ | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/architech_sdk/architech/@board-alias@/yocto/@meta-layer@/recipes-kernel/linux/files/0002-Add-hachiko-support.patch
+
 
 If you are not developing from within the official SDK, the most general solution to check
 them out and patch the sources is:
@@ -34,9 +39,10 @@ them out and patch the sources is:
 
  | cd /home/@user@/Documents
  | git clone -b dora https://github.com/architech-boards/@meta-layer@.git 
- | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/Documents/@meta-layer@/recipes-kernel/linux/files/*.patch
+ | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/Documents/@meta-layer@/recipes-kernel/linux/files/0001-Imported-Renesas-patch-v2.0.0.patch
+ | patch -p1 -d /home/@user@/Documents/kernel < /home/@user@/Documents/@meta-layer@/recipes-kernel/linux/files/0002-Add-hachiko-support.patch
 
-To compile the kernel just execute these commands:
+To compile the kernel without bitbake just execute these commands:
 
 .. host::
 

@@ -114,16 +114,24 @@ The USB pen driver is required to have one single *EXT2* partition with a start
 sector of the partition below the 63rd sector. It is possible to use tools as
 *fdisk* or *cfdisk* to partition the USB drive.
 
+Before use these commands you need unmount the device:
+
 .. host::
 
- | cfdisk /path/to/your/USB/device
+ | sudo umount /path/to/your/USB/device/partition
+
+After that you can use the following commands:
+
+.. host::
+
+ | sudo cfdisk /path/to/your/USB/device
 
 As alternative it is possible to use the sfdisk tools to have the partition
 correctly aligned to the first sector:
 
 .. host::
 
- | sfdisk /path/to/your/USB/device << EOF
+ | sudo sfdisk /path/to/your/USB/device << EOF
  | 0,
  | EOF
 
@@ -131,7 +139,7 @@ correctly aligned to the first sector:
 
 .. host::
 
- | mkfs.ext2 /path/to/your/USB/device/partition
+ | sudo mkfs.ext2 /path/to/your/USB/device/partition
 
 
 USB content
@@ -233,7 +241,7 @@ where $OFFSET is the partition offset and $SIZE its size in bytes.
 
  | sf write $RAM_ADDR $OFFSET $SIZE
 
-where $RAM_ADDR is the temporary RAM location holding our file (tipically @u-boot-start-addr@), $OFFSET is the partition offset and $SIZE is the file size in bytes as obtained by the output of the comman ext2load in step (1).
+where $RAM_ADDR is the temporary RAM location holding our file (tipically @u-boot-start-addr@), $OFFSET is the partition offset and $SIZE is the file size in bytes as obtained by the output of the command ext2load in step (1).
 
 For more informations about flash managing with U-Boot refer to:
 
