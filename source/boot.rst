@@ -256,6 +256,12 @@ To use linux for writing or updating data on the serial NOR you are going to nee
 
  | bitbake core-image-minimal-mtdutils
 
+.. warning::
+
+ | If you are using the **Hachiko-tiny** which is the board without external RAM, in order to compile successfully this image you have to abilitate the IPv6 in the uClibc. To do so open the file:
+ | /home/architech/architech_sdk/architech/hachiko-tiny/yocto/meta-hachiko/conf/distro/tiny-linux-uclibc.conf
+ | and at the line *DISTRO_FEATURES_NET = "ipv4"* change it with **DISTRO_FEATURES_NET = "ipv4 ipv6"**
+
 In Linux, the process is made easier by the MTD framework that remap each NOR partition to a different device file. In particular:
 
 .. board::
